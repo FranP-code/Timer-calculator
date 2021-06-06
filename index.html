@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time calculator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header>
@@ -21,7 +23,18 @@
             </form>
         </div>
         <div class="grid-section-2">
-            <button id='button'>+</button>
+            <div>
+                <div id='button-info'>Add an input</div>
+                <button id='button'>+</button>
+            </div>
+            <div class="display-box">
+                <div class="h3-container">
+                    <h3>Total Time</h3>
+                </div>
+                <div class="display-container">
+                    <div class="display-total">_ _ : _ _</div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
