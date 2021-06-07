@@ -21,19 +21,21 @@
         <div class="grid-section-1">
             <form method="POST" action="./backEnd.php" class="form">
                 <div class="input-container">
-                    <div class='input-name-container'>
-                        <label for='hour'>Hour</label>
-                        <input id='hour' type='number' class='date-input hour' min="00" max="99999">
+                    <div class="input-child">
+                        <div class='input-name-container'>
+                            <label for='hour'>Hour</label>
+                            <input id='hour' type='number' class='date-input hour' min="00" max="99999">
+                        </div>
+                        <div class='input-name-container'>
+                            <label for='minute'>Minute</label>
+                            <input id='minute' type='number' class='date-input minute' min="00" max="99999">
+                        </div>
+                        <div class='input-name-container'>
+                            <label for='second'>Second</label>
+                            <input id='second' type='number' class='date-input second' min="00" max="99999">
+                        </div>
                     </div>
-                    <div class='input-name-container'>
-                        <label for='minute'>Minute</label>
-                        <input id='minute' type='number' class='date-input minute' min="00" max="99999">
-                    </div>
-                    <div class='input-name-container'>
-                        <label for='second'>Second</label>
-                        <input id='second' type='number' class='date-input second' min="00" max="99999">
-                    </div>
-                </div class="input-container">
+                </div>
                 <div class='submit-container'>
                     <input type="submit" name='submit' class="submit" value="Calculate">
                 </div>
@@ -42,7 +44,7 @@
         <div class="grid-section-2">
             <div>
                 <div id='button-info'>Add an input</div>
-                <button id='button'>+</button>
+                <button id='button' onclick="addInput()">+</button>
             </div>
             <div class="display-box">
                 <div class="h3-container">
@@ -56,5 +58,5 @@
     </div>
 </body>
 
-<script type="module" src="script.js"></script>
+<script src="script.js"></script>
 </html>

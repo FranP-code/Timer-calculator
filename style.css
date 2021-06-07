@@ -38,24 +38,27 @@ header h2 {
 }
 
 .grid-section-1 {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
     height: calc(100vh - 103px);
 }
 
 form {
-    grid-row-start: 2;
-    grid-row-end: 3;
+    top: 379px; 
+    position: absolute;
     border-top: white 2px solid;
-    padding-top: 20px;
     background-color: #00000015;
 }
 
-.input-container {
+.input-child {
     margin-left: 40px;
     margin-right: 40px;
     display: flex;
     justify-content: space-around;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.input-child-border {
+    border-top: 1px solid #ffffff;
 }
 
 
@@ -67,10 +70,10 @@ form {
 .input-name-container label {
     display: block;
     width: 155px;
-    text-align: center;
     color: #ffffff; 
     font-size: 15pt;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 .date-input {
@@ -87,14 +90,6 @@ form {
     -moz-appearance: textfield; 
 }
 
-.minute {
-    margin-left: 5px;
-}
-
-.second {
-    margin-left: 5px;
-}
-
 .submit-container {
     display: flex;
     width: 640px;
@@ -109,6 +104,8 @@ form {
     outline: none;
     font-size: 16pt;
     margin-top: 12px;
+    background-color: #2C323C;
+    color: #ffffff;
     transition: 0.4s background-color ease-in-out;
     -webkit-transition: 0.4s background-color ease-in-out;
     -moz-transition: 0.4s background-color ease-in-out;
@@ -117,7 +114,7 @@ form {
 }
 
 .submit:hover {
-    background-color: #c0c0c0;
+    background-color: #3b4250;
     transition: 0.4s background-color ease-in-out;
     -webkit-transition: 0.4s background-color ease-in-out;
     -moz-transition: 0.4s background-color ease-in-out;
