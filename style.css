@@ -40,13 +40,97 @@ header h2 {
 .grid-section-1 {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    background-color: green; /* QUITAR ESTO */
     height: calc(100vh - 103px);
 }
 
 form {
     grid-row-start: 2;
     grid-row-end: 3;
+    border-top: white 2px solid;
+    padding-top: 20px;
+    background-color: #00000015;
+}
+
+.input-container {
+    margin-left: 40px;
+    margin-right: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.input-name-container {
+    display: block;
+    width: 155px;
+}
+
+.input-name-container label {
+    display: block;
+    width: 155px;
+    text-align: center;
+    color: #ffffff; 
+    font-size: 15pt;
+    margin-bottom: 5px;
+}
+
+.date-input {
+    width: 155px;
+    height: 95px;
+    background-color: #764343;
+    border: none;
+    outline: none;
+    font-size: 20pt;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: textfield; 
+}
+
+.minute {
+    margin-left: 5px;
+}
+
+.second {
+    margin-left: 5px;
+}
+
+.submit-container {
+    display: flex;
+    width: 640px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.submit {
+    width: 280px;
+    height: 100px;
+    border: none;
+    outline: none;
+    font-size: 16pt;
+    margin-top: 12px;
+    transition: 0.4s background-color ease-in-out;
+    -webkit-transition: 0.4s background-color ease-in-out;
+    -moz-transition: 0.4s background-color ease-in-out;
+    -ms-transition: 0.4s background-color ease-in-out;
+    -o-transition: 0.4s background-color ease-in-out;
+}
+
+.submit:hover {
+    background-color: #c0c0c0;
+    transition: 0.4s background-color ease-in-out;
+    -webkit-transition: 0.4s background-color ease-in-out;
+    -moz-transition: 0.4s background-color ease-in-out;
+    -ms-transition: 0.4s background-color ease-in-out;
+    -o-transition: 0.4s background-color ease-in-out;
+}
+
+.submit:active {
+    transform: translateY(2px);
+    -webkit-transform: translateY(2px);
+    -moz-transform: translateY(2px);
+    -ms-transform: translateY(2px);
+    -o-transform: translateY(2px);
 }
 
 .grid-section-2 {
@@ -116,11 +200,12 @@ button:hover {
 }
 
 button:active {
-    transform: translate(2px, 2px);
-    -webkit-transform: translate(2px, 2px);
-    -moz-transform: translate(2px, 2px);
-    -ms-transform: translate(2px, 2px);
-    -o-transform: translate(2px, 2px);
+    border: none;
+    transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    -moz-transform: translate(0px, 2px);
+    -ms-transform: translate(0px, 2px);
+    -o-transform: translate(0px, 2px);
 }
 
 .fix-button-for-firefox {

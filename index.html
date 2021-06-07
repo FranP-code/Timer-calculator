@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,35 @@
     <title>Time calculator</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header>
-            <h1>Time calculator</h1>
-            <h2>by FranPCode</h2>
+        <h1>Time calculator</h1>
+        <h2>by FranPCode</h2>
     </header>
 
     <div class="grid-container">
         <div class="grid-section-1">
             <form method="POST" action="./backEnd.php" class="form">
-
-                <input type="submit" name='submit' class="submit" value="Calculate"></input>
+                <div class="input-container">
+                    <div class='input-name-container'>
+                        <label for='hour'>Hour</label>
+                        <input id='hour' type='number' class='date-input hour' min="00" max="99999">
+                    </div>
+                    <div class='input-name-container'>
+                        <label for='minute'>Minute</label>
+                        <input id='minute' type='number' class='date-input minute' min="00" max="99999">
+                    </div>
+                    <div class='input-name-container'>
+                        <label for='second'>Second</label>
+                        <input id='second' type='number' class='date-input second' min="00" max="99999">
+                    </div>
+                </div class="input-container">
+                <div class='submit-container'>
+                    <input type="submit" name='submit' class="submit" value="Calculate">
+                </div>
             </form>
         </div>
         <div class="grid-section-2">
