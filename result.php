@@ -1,3 +1,7 @@
+<?
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,7 +55,7 @@
                     <h3>Total Time</h3>
                 </div>
                 <div class="display-container">
-                    <div class="display-total">_ _ : _ _ : _ _</div>
+                    <div class="display-total result-display"><?php echo $_COOKIE['hours'] . ' : ' . $_COOKIE['minutes'] . ' : ' . $_COOKIE['seconds'] ?></div>
                 </div>
             </div>
         </div>
@@ -60,3 +64,14 @@
 
 <script src="script.js"></script>
 </html>
+
+<?php
+
+setcookie('hours', $hours, time() - 3600, './');
+setcookie('minutes', $minutes, time() - 3600, './');
+setcookie('seconds', $seconds, time() - 3600, './');
+
+
+if (is_null($_COOKIE['hours']) && is_null($_COOKIE['minutes']) && is_null($_COOKIE['seconds'])) {
+    header('Location: ./index.html');
+}

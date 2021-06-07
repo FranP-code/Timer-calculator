@@ -46,6 +46,7 @@ form {
     position: absolute;
     border-top: white 2px solid;
     background-color: #00000015;
+    margin-bottom: 20px;
 }
 
 .input-child {
@@ -74,6 +75,7 @@ form {
     font-size: 15pt;
     margin-bottom: 5px;
     text-align: center;
+    user-select: none;
 }
 
 .date-input {
@@ -104,6 +106,7 @@ form {
     outline: none;
     font-size: 16pt;
     margin-top: 12px;
+    margin-bottom: 12px;
     background-color: #2C323C;
     color: #ffffff;
     transition: 0.4s background-color ease-in-out;
@@ -157,7 +160,7 @@ form {
     color: #ffffff;
     text-align: center;
     font-size: 18pt;
-    font-weight: bold;
+    font-weight: normal;
     user-select: none;
 }
 
@@ -248,4 +251,13 @@ h3 {
     text-align: center;
     margin-top: 6%;
     box-shadow: 10px 10px 0px #2C323C;
+    user-select: none;
+}
+
+.result-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4dc94d;
+    user-select: text;
 }
