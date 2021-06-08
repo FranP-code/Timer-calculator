@@ -23,14 +23,35 @@ function select_time($keyTypeOfTime) {
     $totalTime = 0;
 
     for ($i = 0; $i < sizeof($_POST); $i++) {
-        if (strpos(array_keys($_POST)[$i], $keyTypeOfTime)) {
+        if (strpos(array_keys($_POST)[$i], $keyTypeOfTime) && filter_var($_POST[array_keys($_POST)[$i]], FILTER_VALIDATE_INT)) {
+            
             $totalTime = $totalTime + $_POST[array_keys($_POST)[$i]];
+
+            if(!valid_range_number($totalTime)) {
+                header('Location: index.html');
+            }
+
             }
         }
     
     return $totalTime;
     }
 
+function valid_range_number($inputWhatever) {    
+    if ($inputWhatever <= 99999 && $inputWhatever >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function style_number($inputWhatever) {
+    if ($inputWhatever < 10) {
+        return '0'. $inputWhatever;
+    } else {
+        return $inputWhatever;
+    }
+}
 
 //! CALCULAR SEGUNDOS
 
@@ -48,42 +69,33 @@ while ($seconds >= 60) {
 
 }
 
-if ($seconds < 10) {
-    $seconds = '0'. $seconds;
-}
-
 echo '<br>' . $minutes;
 
 //* CALCULAR MINUTOS
 
 $minutes = $minutes + select_time('_n3');
 
-echo '<br>' . $minutes;
-
 //* PASAR MINUTOS 'DE MAS' A HORAS
 
 while ($minutes >= 60) {
     $minutes = $minutes - 60;
-    echo '<br>' . $minutes;
 
     $hours++;
 }
 
-if ($minutes < 10) {
-    $minutes = '0'. $minutes;
-}
 //? CALCULAR HORAS
 
 $hours = $hours + select_time('_n1');
 
 echo '<br>' . $hours;
 
-if ($hours < 10) {
-    $hours = '0'. $hours;
-}
+//! RETOQUES FINALES
 
-setcookie('hours', $hours, time() + 3600, './');
-setcookie('minutes', $minutes, time() + 3600, './');
+$seconds = style_number($seconds);
 setcookie('seconds', $seconds, time() + 3600, './');
+$minutes = style_number($minutes);
+setcookie('minutes', $minutes, time() + 3600, './');
+$hours = style_number($hours);
+setcookie('hours', $hours, time() + 3600, './');
 
 header('Location: ./result.php');

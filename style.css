@@ -255,9 +255,25 @@ h3 {
 }
 
 .result-display {
+    animation: ease-in-out success 0.4s;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #4dc94d;
     user-select: text;
+    -webkit-transition: background-color ease-in-out 0.4s;
+    -moz-transition: background-color ease-in-out 0.4s;
+    -ms-transition: background-color ease-in-out 0.4s;
+    -o-transition: background-color ease-in-out 0.4s;
+    -webkit-animation: ease-in-out success 0.4s;
+}
+
+@keyframes success {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }

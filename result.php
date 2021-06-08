@@ -1,4 +1,6 @@
-<?
+<?php
+
+
 
 ?>
 
@@ -67,9 +69,10 @@
 
 <?php
 
-setcookie('hours', $hours, time() - 3600, './');
-setcookie('minutes', $minutes, time() - 3600, './');
-setcookie('seconds', $seconds, time() - 3600, './');
+
+setcookie('hours', 0, time() - 3600, './');
+setcookie('minutes', 0, time() - 3600, './');
+setcookie('seconds', 0, time() - 3600, './');
 
 
 if (is_null($_COOKIE['hours']) && is_null($_COOKIE['minutes']) && is_null($_COOKIE['seconds'])) {
