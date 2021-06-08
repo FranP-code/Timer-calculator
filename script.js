@@ -41,3 +41,128 @@ function addInput() {
     codeBlock = codeBlockTemplate.cloneNode(true)
     c++
 }
+
+//------------------------------------------------------------------------------------------------------------------------------
+
+let errorScreen = document.querySelector('.error_resolution');
+
+let width = window.innerWidth;
+let height = window.innerHeight;
+//* Credits: https://www.codegrepper.com/code-examples/javascript/addeventlistener+resize+get+screen+width+javasscripot
+
+if (width < 1000 || height < 600) {
+    console.log('MENOR A 720');
+    errorScreen.style.visibility = 'visible';
+}
+
+addEventListener('resize', function() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+
+    let a = width >= 1000;
+    let b = width < 1000;
+    let c = height >= 600;
+    let d = height < 600;
+
+    let index = 0;
+
+    if (b) {
+        console.log('MENOR A 720');
+        errorScreen.style.visibility = 'visible';
+        index = 1;
+    }
+
+    if (d) {
+        console.log('MENOR A 720');
+        errorScreen.style.visibility = 'visible';
+        index = 1;
+    }
+
+    if (a && index == 0) {
+        console.log('MAYOR A 720');
+        errorScreen.style.visibility = 'hidden';
+    }
+    
+    if (c && index == 0) {
+        console.log('MAYOR A 720');
+        errorScreen.style.visibility = 'hidden';
+    }
+
+    /*
+    index = 0;
+    
+    //! VIEW SCHEME IN additional_files FOLDER
+
+    if (a && index == 0) {
+        if (c) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'hidden';
+            index++;
+        }
+
+        if (d) {
+            console.log('MENOR A 720');
+            errorScreen.style.visibility = 'visible';
+            index++;
+        }
+
+    }
+
+    if (b && index == 0) {
+        if (c) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'hidden';
+            index++;
+        }
+
+        if (d) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'hidden';
+            index++;
+        }
+    }
+
+    if (c && index == 0) {
+        if (a) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'visible';
+            index++;
+        }
+
+        if (b) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'hidden';
+            index++;
+        }
+    }
+
+    if (d && index == 0) {
+        if (a) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'hidden';
+            index++;
+        }
+
+        if (b) {
+            console.log('MAYOR A 720');
+            errorScreen.style.visibility = 'visible';
+            index++;
+        }
+    }
+
+    /*
+
+    if (height < 720 || width < 1280) {
+        console.log('MENOR A 720');
+        errorScreen.style.visibility = 'visible'
+    }
+
+    
+    if (height >= 720 || width >= 1280) {
+        console.log('MAYOR A 720');
+        errorScreen.style.visibility = 'hidden'
+
+    }*/
+})
+
+
