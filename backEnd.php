@@ -21,12 +21,22 @@ $hours = 0;
 function select_time($keyTypeOfTime) {
 
     $totalTime = 0;
+    $working = false;
 
     for ($i = 0; $i < sizeof($_POST); $i++) {
-        if (strpos(array_keys($_POST)[$i], $keyTypeOfTime) && filter_var($_POST[array_keys($_POST)[$i]], FILTER_VALIDATE_INT)) {
-            
-            $totalTime = $totalTime + $_POST[array_keys($_POST)[$i]];
+        if (strpos(array_keys($_POST)[$i], $keyTypeOfTime)) {
 
+            if (!str_starts_with($_POST[array_keys($_POST)[$i]], '0')) {
+                    if(filter_var($_POST[array_keys($_POST)[$i]], FILTER_VALIDATE_INT)) {;
+                    $working = true;
+                }
+            } else {
+                $working = true;
+            }
+            
+            if ($working == true) {
+               $totalTime = $totalTime + $_POST[array_keys($_POST)[$i]];
+            }
             if(!valid_range_number($totalTime)) {
                 header('Location: index.html');
             }

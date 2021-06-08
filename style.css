@@ -11,7 +11,7 @@ html {
 
 body {
     height: 100%;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 .error_resolution {
@@ -238,7 +238,7 @@ button:active {
     background-color: #00000033;
     text-align: center;
     padding: 25px;
-    height: 50%;
+    height: 250px;
     width: 45%;
     margin-left: 51%;
     margin-top: 17%;

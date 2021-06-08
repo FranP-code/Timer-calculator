@@ -1,6 +1,7 @@
 let userAgentData = navigator.userAgent
 let button = document.getElementById("button")
 let buttonInfo = document.getElementById("button-info")
+let body = document.getElementById("body")
 
 console.log(userAgentData)
 
@@ -25,6 +26,8 @@ let c = 1;
 console.log(codeBlock)
 
 function addInput() {
+
+    body.style.overflow = "visible";
 
     for (let i = 0; i <= 5; i++) {
         if (i == 1 || i == 3 || i == 5) {
