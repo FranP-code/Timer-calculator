@@ -50,7 +50,10 @@ let width = window.innerWidth;
 let height = window.innerHeight;
 //* Credits: https://www.codegrepper.com/code-examples/javascript/addeventlistener+resize+get+screen+width+javasscripot
 
-if (width < 1000 || height < 600) {
+const min_width = 1297;
+const min_height = 680;
+
+if (width < min_width || height < min_height) {
     console.log('MENOR A 720');
     errorScreen.style.visibility = 'visible';
 }
@@ -59,10 +62,10 @@ addEventListener('resize', function() {
     width = window.innerWidth;
     height = window.innerHeight;
 
-    let a = width >= 1000;
-    let b = width < 1000;
-    let c = height >= 600;
-    let d = height < 600;
+    let a = width >= min_width;
+    let b = width < min_width;
+    let c = height >= min_height;
+    let d = height < min_height;
 
     let index = 0;
 

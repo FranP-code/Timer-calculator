@@ -11,6 +11,7 @@ html {
 
 body {
     height: 100%;
+    overflow:hidden;
 }
 
 .error_resolution {
@@ -60,12 +61,10 @@ header h2 {
 }
 
 .grid-section-1 {
-    height: calc(100vh - 103px);
 }
 
 form {
-    top: 379px; 
-    position: absolute;
+
     border-top: white 2px solid;
     background-color: #00000015;
     margin-bottom: 20px;
@@ -76,7 +75,7 @@ form {
     margin-right: 40px;
     display: flex;
     justify-content: space-around;
-    padding-top: 30px;
+    padding-top: 5vh;
     margin-bottom: 30px;
 }
 
@@ -156,18 +155,22 @@ form {
 }
 
 .grid-section-2 {
-    height: calc(100vh - 103px);
+    height: 100%;
+    width: 90%;
+    padding-right: 10%;
+}
+
+.button-container {
     display: flex;
-    width: 100%;
+    align-items: center;
+    flex-direction: column;
 }
 
 #button-info {
+    
     width: 120px;
     height: 120px;
     background-color: #2C323C;
-    position: absolute;
-    left: calc(50vw - (120px / 2));
-    top: 150px;
     opacity: 0;
     transition: 0.4s opacity ease-in-out;
     -webkit-transition: 0.4s opacity ease-in-out;
@@ -186,18 +189,14 @@ form {
     user-select: none;
 }
 
-button {
+button { 
     width: 150px;
     height: 150px;
     font-size: 190pt;
     background-color: #2C323C;
-    margin-top: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 150px;
-    left: calc(50vw - (150px / 2));
     color: #ffffff;
     border: none;
     border-radius: 8%;
@@ -236,14 +235,13 @@ button:active {
 }
 
 .display-box {
-    width: 663px;
-    height: 269px;
     background-color: #00000033;
-    margin-left: 40%;
-    margin-top: 40%;
     text-align: center;
-    padding-top: 25px;
-    box-sizing: content-box;
+    padding: 25px;
+    height: 50%;
+    width: 45%;
+    margin-left: 51%;
+    margin-top: 17%;
 }
 
 .h3-container {
@@ -265,8 +263,8 @@ h3 {
 }
 
 .display-total {
-    width: 553px;
-    height: 139px;
+    width: 95%;
+    padding: 5%;
     font-size: 60pt;
     font-weight: bold;
     background-color: #969696;
@@ -274,6 +272,16 @@ h3 {
     margin-top: 6%;
     box-shadow: 10px 10px 0px #2C323C;
     user-select: none;
+
+}
+
+@media (max-width: 1628px)  {
+    .display-total {       
+        font-size: 35pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .result-display {
@@ -298,4 +306,8 @@ h3 {
     100% {
         opacity: 100%;
     }
+}
+
+.bigger-than-1000 {
+    font-size: 35pt;
 }

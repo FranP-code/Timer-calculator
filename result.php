@@ -1,9 +1,3 @@
-<?php
-
-
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +12,23 @@
 </head>
 
 <body>
+
+    <div class="error_resolution">
+        <span class="face">:/</span>
+        <div class="message">Sorry, but the page is not adapted for your screen resolution.</div>
+    </div>
+
     <header>
         <h1>Time calculator</h1>
         <h2>by FranPCode</h2>
     </header>
+
+    <div class="button-container">
+            <div id='button-info'>Add an input</div>
+        <div>
+            <button id='button' onclick="addInput()">+</button>
+        </div>
+    </div>
 
     <div class="grid-container">
         <div class="grid-section-1">
@@ -30,15 +37,15 @@
                     <div class="input-child">
                         <div class='input-name-container'>
                             <label for='hour'>Hour</label>
-                            <input name='input_s0_n1' id='hour' type='number' class='date-input hour' min="00" max="99999">
+                            <input name='input_s0_n1' id='hour' type='number' class='date-input hour' min="00" >
                         </div>
                         <div class='input-name-container'>
                             <label for='minute'>Minute</label>
-                            <input name='input_s0_n3' id='minute' type='number' class='date-input minute' min="00" max="99999">
+                            <input name='input_s0_n3' id='minute' type='number' class='date-input minute' min="00" >
                         </div>
                         <div class='input-name-container'>
                             <label for='second'>Second</label>
-                            <input name='input_s0_n5' id='second' type='number' class='date-input second' min="00" max="99999">
+                            <input name='input_s0_n5' id='second' type='number' class='date-input second' min="00" >
                         </div>
                     </div>
                 </div>
@@ -48,16 +55,17 @@
             </form>
         </div>
         <div class="grid-section-2">
-            <div>
-                <div id='button-info'>Add an input</div>
-                <button id='button' onclick="addInput()">+</button>
-            </div>
             <div class="display-box">
                 <div class="h3-container">
                     <h3>Total Time</h3>
                 </div>
                 <div class="display-container">
-                    <div class="display-total result-display"><?php echo $_COOKIE['hours'] . ' : ' . $_COOKIE['minutes'] . ' : ' . $_COOKIE['seconds'] ?></div>
+                    <?php if ($_COOKIE['hours'] > 999) {
+                        echo '<div class="display-total result-display bigger-than-1000">'; 
+                    } else {
+                        echo '<div class="display-total result-display">';
+                    }?>
+                    <?php echo $_COOKIE['hours'] . ' : ' . $_COOKIE['minutes'] . ' : ' . $_COOKIE['seconds'] ?></div>
                 </div>
             </div>
         </div>
