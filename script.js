@@ -47,6 +47,7 @@ function addInput() {
 
 //------------------------------------------------------------------------------------------------------------------------------
 
+/*
 let errorScreen = document.querySelector('.error_resolution');
 
 let width = window.innerWidth;
@@ -93,6 +94,8 @@ addEventListener('resize', function() {
         console.log('MAYOR A 720');
         errorScreen.style.visibility = 'hidden';
     }
+
+    */
 
     /*
     index = 0;
@@ -168,7 +171,7 @@ addEventListener('resize', function() {
         console.log('MAYOR A 720');
         errorScreen.style.visibility = 'hidden'
 
-    }*/
+    }
 })
-
+*/
 

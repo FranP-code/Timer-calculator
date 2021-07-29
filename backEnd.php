@@ -25,12 +25,13 @@ function select_time($keyTypeOfTime) {
 
     for ($i = 0; $i < sizeof($_POST); $i++) {
         if (strpos(array_keys($_POST)[$i], $keyTypeOfTime)) {
+            
+            if (empty($_POST[array_keys($_POST)[$i]])) {
+                $_POST[array_keys($_POST)[$i]] = 0;
+            }
 
-            if (!str_starts_with($_POST[array_keys($_POST)[$i]], '0')) {
-                    if(filter_var($_POST[array_keys($_POST)[$i]], FILTER_VALIDATE_INT)) {;
-                    $working = true;
-                }
-            } else {
+            
+            if(filter_var($_POST[array_keys($_POST)[$i]], FILTER_VALIDATE_INT)) {
                 $working = true;
             }
             
@@ -41,7 +42,7 @@ function select_time($keyTypeOfTime) {
                 header('Location: index.html');
             }
 
-            }
+            } 
         }
     
     return $totalTime;
