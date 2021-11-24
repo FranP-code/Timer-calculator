@@ -1,0 +1,4 @@
+sass/*.scss linguist-detectable=false
+/css/*.css linguist-detectable=false
+*.css linguist-detectable=false
+/css/*.map linguist-detectable=false
